@@ -1,0 +1,14 @@
+//adstracts
+@import "../scss/adstracts/variables";
+
+//mixin
+@import "../scss/helpers/mixin";
+@import "../scss/helpers/function";
+
+//base
+@import "../scss/base/reset";
+@import "../scss/base/common";
+
+//layout
+@import "../scss/layout/gnb";
+@import "../scss/layout/footer";

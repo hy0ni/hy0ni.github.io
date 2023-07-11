@@ -1,0 +1,73 @@
+/* ----------------------------------------------------------
+	공통 
+---------------------------------------------------------- */
+body {
+  overflow-x: hidden;
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+body::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari, Opera*/
+}
+
+.hidden {
+  display: none !important;
+}
+
+.hidden-desktop {
+  display: none !important;
+
+  @include mobile {
+    display: block !important;
+  }
+}
+
+.hidden-mobile {
+  display: block !important;
+
+  @include mobile {
+    display: none !important;
+  }
+}
+
+.br-mobile {
+  display: none;
+
+  @include mobile {
+    display: block;
+  }
+}
+
+.br-pc {
+  display: block;
+
+  @include mobile {
+    display: none;
+  }
+}
+
+:root {
+  --vw: 1920;
+}
+
+@include notebook {
+  :root {
+    --vw: 1600;
+  }
+}
+
+@include tablet {
+  :root {
+    --vw: 1000;
+  }
+}
+
+@include mobile {
+  :root {
+    --vw: 320;
+  }
+}
