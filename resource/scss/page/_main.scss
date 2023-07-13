@@ -11,6 +11,7 @@
     font-weight: $weightM;
     font-size: 16px;
     color: $font;
+    transition: color 0.3s ease;
     &:hover {
       color: #bfaf5a;
     }
