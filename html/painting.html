@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>간단한 그림판 구현하기 - canvas</title>
+  <link rel="stylesheet" href="../resource/css/style.min.css">
+  <style>
+    canvas {
+      background-color: #eee;
+    }
+
+    .color-btn {
+      width: 30px;
+      height: 30px;
+      border: 0;
+      border-radius: 50%;
+    }
+
+    .color-btn[data-color="#000"] {
+      background-color: #000;
+    }
+
+    .color-btn[data-color="#d35400"] {
+      background-color: #d35400;
+    }
+
+    .color-btn[data-color="#f1c40f"] {
+      background-color: #f1c40f;
+    }
+
+    .color-btn[data-color="#2ecc71"] {
+      background-color: #2ecc71;
+    }
+
+    .color-btn[data-color="#3498db"] {
+      background-color: #3498db;
+    }
+
+    .image-btn {
+      width: 40px;
+      height: 40px;
+      border: 1px solid #ccc;
+      background: url('../../resource/img/temp/paint_img.png') no-repeat 50% 50% / cover;
+    }
+
+    .save-btn {
+      padding: 5px;
+      margin-top: 10px;
+      background: #fff;
+    }
+
+  </style>
+</head>
+
+<body>
+  <!-- navigation -->
+  <header class="main-header">
+    <img class="logo" src="../resource/img/avarta.png" alt="">
+    <h1 class="title">hyoni Dev</h1>
+  </header>
+
+  <main class="wrap">
+    <section class="container">
+      <h3>canvas - 그림판 구현하기</h3>
+      <canvas class="canvas" width="600" height="400"></canvas>
+      <div class="control">
+        <button class="color-btn" data-type="color" data-color="#000"></button>
+        <button class="color-btn" data-type="color" data-color="#d35400"></button>
+        <button class="color-btn" data-type="color" data-color="#f1c40f"></button>
+        <button class="color-btn" data-type="color" data-color="#2ecc71"></button>
+        <button class="color-btn" data-type="color" data-color="#3498db"></button>
+        <button class="image-btn" data-type="image"></button>
+      </div>
+      <button class="save-btn">이미지 저장</button>
+      <div class="result-image"></div>
+    </section>
+  </main>
+  <script>
+    const canvas = document.querySelector('.canvas');
+    const ctx = canvas.getContext('2d');
+    const $control = document.querySelector('.control');
+    const $saveBtn = document.querySelector('.save-btn');
+    const $resultImage = document.querySelector('.result-image');
+    let drawingMode; // true일 때만 그리기
+    let brush = 'color'; // 'color' or 'image'
+    let colorVal = 'black'; // 색상
+
+    const imgElem = new Image();
+    imgElem.src = '../../resource/img/temp/paint_img.png';
+
+    function downHandler() {// 마우스를 눌렀을 때
+      drawingMode = true;
+    }
+
+    function upHandler() {// 마우스를 뗐을 때
+      drawingMode = false;
+    }
+    // 원하는 위치에 마우스를 클릭했을 때 클릭한 위치에 도형 그리기
+    function moveHandler(event) {
+      if (!drawingMode) return;
+
+      switch (brush) {
+        case 'color':
+          ctx.beginPath(); // path시작시 beginPath()를 꼭 넣어주는 것이 좋다.
+          ctx.arc(event.offsetX, event.offsetY, 10, 0, Math.PI * 2, false);
+          ctx.fill();
+          break;
+        case 'image':
+          ctx.drawImage(imgElem, event.offsetX, event.offsetY, 50, 50);
+          break;
+      }
+    }
+
+    function setColor(event) {
+      brush = event.target.dataset.type;
+      colorVal = event.target.dataset.color;
+      ctx.fillStyle = colorVal;
+      // console.log(brush);
+    }
+
+    function createImage() {
+      const url = canvas.toDataURL('image/png');
+      const imgElem = new Image();
+      imgElem.src = url;
+      $resultImage.appendChild(imgElem);
+      // console.log(url);
+    }
+
+    canvas.addEventListener('mousedown', downHandler); // 마우스를 눌렀을때
+    canvas.addEventListener('mousemove', moveHandler);
+    canvas.addEventListener('mouseup', upHandler); // 마우스를 뗄때
+    $control.addEventListener('click', setColor);
+    $saveBtn.addEventListener('click', createImage);
+  </script>
+</body>
+
+</html>
