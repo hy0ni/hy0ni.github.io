@@ -1,0 +1,56 @@
+.main-footer {
+  @include flex();
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: vw(40);
+
+  @include tablet {
+    height: vw(80);
+  }
+  @include tablet-wide {
+    height: vw(80);
+  }
+  @include notebook {
+    height: vw(80);
+  }
+
+  .footer-logo {
+    display: block;
+    width: vw(12);
+    height: vw(12);
+    @include tablet {
+      width: vw(14);
+      height: vw(14);
+    }
+    @include tablet-wide {
+      width: vw(14);
+      height: vw(14);
+    }
+    @include notebook {
+      width: vw(14);
+      height: vw(14);
+    }
+  }
+  a {
+    padding-left: vw(4);
+    display: block;
+    font-size: vw(10);
+    font-weight: $weightSB;
+    color: $font;
+    @include tablet {
+      font-size: vw(12);
+    }
+    @include tablet-wide {
+      font-size: vw(12);
+    }
+    @include notebook {
+      font-size: vw(12);
+    }
+  }
+
+  &:hover a {
+    color: #bfaf5a;
+  }
+}

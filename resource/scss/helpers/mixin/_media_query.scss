@@ -1,46 +1,46 @@
 /* @media Breakpoints */
-$breakpoint-mobile-fold: 320px;
-$breakpoint-mobile-landscape : 416px;
+$breakpoint-mobile-fold: 321px;
+$breakpoint-mobile-landscape: 416px;
 $breakpoint-tablet: 769px;
-$breakpoint-notebook: 1280px;
+$breakpoint-notebook: 1281px;
 $breakpoint-desktop: 1920px;
 
-// PC 우선
-
 @mixin mobile-fold {
-
-  //320px -1
+  //321px -1
   @media (max-width: #{$breakpoint-mobile-fold - 1px}) {
     @content;
   }
 }
 
 @mixin mobile {
-
-  //416px 
-  @media (max-width: #{$breakpoint-mobile-landscape}) {
+  //416px -1
+  @media (max-width:#{$breakpoint-mobile-landscape -1 px}) {
     @content;
   }
 }
 
 @mixin tablet {
+  //416px and 769px -1
+  @media (min-width: #{$breakpoint-mobile-landscape}) and (max-width:#{$breakpoint-tablet - 1px}){
+    @content;
+  }
+}
 
-  //769px 
-  @media (max-width: #{$breakpoint-tablet}) {
+@mixin tablet-wide {
+  //769px and 1281px -1
+  @media (min-width: #{$breakpoint-tablet}) and (max-width:#{$breakpoint-notebook - 1px}){
     @content;
   }
 }
 
 @mixin notebook {
-
-  //1280px
-  @media (max-width: #{$breakpoint-notebook}) {
+  //1281px
+  @media (min-width: #{$breakpoint-notebook}){
     @content;
   }
 }
 
-@mixin wide-desktop {
-
+@mixin desktop {
   //1920px
   @media (min-width: #{$breakpoint-desktop}) {
     @content;
@@ -48,7 +48,6 @@ $breakpoint-desktop: 1920px;
 }
 
 @mixin landscape {
-
   //가로모드
   @media (orientation: landscape) {
     @content;
@@ -56,7 +55,6 @@ $breakpoint-desktop: 1920px;
 }
 
 @mixin portrait {
-
   //세로모드
   @media (orientation: portrait) {
     body {

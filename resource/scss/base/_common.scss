@@ -7,6 +7,7 @@ body {
   /* IE and Edge */
   scrollbar-width: none;
   /* Firefox */
+  background: #EBE8E4;
 }
 
 body::-webkit-scrollbar {
@@ -51,7 +52,18 @@ body::-webkit-scrollbar {
 }
 
 :root {
-  --vw: 1920;
+  --vw: 320;
+}
+
+@include tablet {
+  :root {
+    --vw: 769;
+  }
+}
+@include tablet-wide {
+  :root {
+    --vw: 1280;
+  }
 }
 
 @include notebook {
@@ -60,14 +72,8 @@ body::-webkit-scrollbar {
   }
 }
 
-@include tablet {
+@include desktop {
   :root {
-    --vw: 1000;
-  }
-}
-
-@include mobile {
-  :root {
-    --vw: 320;
+    --vw: 1920;
   }
 }

@@ -1,0 +1,61 @@
+.main-header {
+  width: 100%;
+  height: vw(60);
+  border-bottom: 1px solid $border;
+  @include flex();
+
+  @include tablet {
+    height: vw(100);
+  }
+  @include tablet-wide {
+    height: vw(100);
+  }
+  @include notebook {
+    height: vw(100);
+  }
+
+  .logo {
+    display: block;
+    width: vw(60);
+
+    @include tablet {
+      width: vw(100);
+    }
+    @include tablet-wide {
+      width: vw(100);
+    }
+    @include notebook {
+      width: vw(100);
+    }
+  }
+  .title {
+    margin-left: vw(-8);
+    font-size: vw(16);
+    font-weight: $weightSB;
+    color: $font;
+
+    @include tablet {
+      font-size: vw(18);
+      margin-left: vw(-14);
+    }
+    @include tablet-wide {
+      font-size: vw(20);
+      margin-left: vw(-14);
+    }
+    @include notebook {
+      font-size: vw(20);
+      margin-left: vw(-14);
+    }
+  }
+
+  .blog {
+    display: block;
+    padding-right: vw(20);
+    font-weight: $weightSB;
+    font-size: vw(18);
+    color: $font;
+    &:hover {
+      color: #bfaf5a;
+    }
+  }
+}
