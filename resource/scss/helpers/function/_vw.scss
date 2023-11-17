@@ -1,0 +1,7 @@
+@function vw($target: 0, $vw: 0) {
+  @if $vw==0 {
+    @return calc((#{$target} * 100 / var(--vw)) * 1vw);
+  } @else {
+    @return calc((#{$target} * 100 / #{$vw}) * 1vw);
+  }
+}

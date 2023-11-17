@@ -1,0 +1,88 @@
+// ---------------------------------------------------------
+//	# hidden
+//----------------------------------------------------------
+
+.hidden {
+  display: none;
+}
+
+.hidden-mobile {
+  display: none !important;
+}
+
+.hidden-desktop {
+  display: black !important;
+}
+
+// 769부터
+@include tablet {
+  .hidden-mobile {
+    display: block !important;
+  }
+
+  .hidden-desktop {
+    display: none !important;
+  }
+}
+
+.ko {
+  div,
+  span,
+  applet,
+  object,
+  iframe,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  a,
+  address,
+  em,
+  dt,
+  dd,
+  li,
+  label,
+  tr,
+  th,
+  td,
+  article,
+  aside,
+  canvas,
+  figure,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  section,
+  mark {
+    word-break: keep-all !important;
+  }
+}
+
+:root {
+  --vw: 280;
+}
+
+@include mobile {
+  :root {
+    --vw: 360;
+  }
+}
+
+// 769
+@include tablet {
+  :root {
+    --vw: 1024;
+  }
+}
+
+// 1080
+@include tablet-land {
+  :root {
+    --vw: 1280;
+  }
+}
