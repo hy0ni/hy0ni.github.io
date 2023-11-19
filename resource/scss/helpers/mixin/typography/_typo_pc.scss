@@ -1,0 +1,72 @@
+//--------------------------------------
+// Heading
+//--------------------------------------
+@mixin pc-heading1($color: $color) {
+  color: $color;
+  font-weight: 700;
+  font-size: vw(44);
+  line-height: vw(60);
+  letter-spacing: vw(-2.5);
+}
+
+@mixin pc-heading2($color: $color) {
+  color: $color;
+  font-weight: 700;
+  font-size: vw(34);
+  line-height: vw(50);
+  letter-spacing: vw(-2.5);
+}
+
+//--------------------------------------
+// Body
+//--------------------------------------
+@mixin pc-body1($color: $color, $weight: $weight) {
+  color: $color;
+  font-weight: $weight;
+  font-size: vw(22);
+  line-height: vw(34);
+  letter-spacing: vw(-2.5);
+}
+
+@mixin pc-body2($color: $color) {
+  color: $color;
+  font-weight: 700;
+  font-size: vw(20);
+  line-height: vw(28);
+  letter-spacing: vw(-2.5);
+}
+
+@mixin pc-body3($color: $color) {
+  color: $color;
+  font-weight: 500;
+  font-size: vw(18);
+  line-height: vw(26);
+  letter-spacing: vw(-2.5);
+}
+
+//--------------------------------------
+// Label
+//--------------------------------------
+@mixin pc-label1($color: $color) {
+  color: $color;
+  font-weight: 700;
+  font-size: vw(34);
+  line-height: vw(50);
+}
+
+@mixin pc-label2($color: $color) {
+  color: $color;
+  font-weight: 700;
+  font-size: vw(24);
+  line-height: vw(32);
+}
+
+//--------------------------------------
+// Footer
+//--------------------------------------
+@mixin pc-footer($color: $color, $weight: $weight) {
+  color: $color;
+  font-weight: $weight;
+  font-size: vw(14);
+  line-height: vw(20);
+}
