@@ -5,13 +5,8 @@ $black: #000 !default;
 
 // color setting
 // $primary:
-
-// z-index
-$z-gnb: 500 !default;
-$z-popup: 1000 !default;
-$z-header: 1 !default;
-$z-content: 1 !default;
-$z-footer: 100 !default;
+$secondary: #ece3c1;
+$active: #c5e501;
 
 // font-weight
 $weightT: 200 !default;
@@ -21,3 +16,10 @@ $weightM: 500 !default;
 $weightSB: 600 !default;
 $weightB: 700 !default;
 $weightEB: 800 !default;
+
+// z-index
+$z-gnb: 500 !default;
+$z-popup: 1000 !default;
+$z-header: 1 !default;
+$z-content: 1 !default;
+$z-footer: 100 !default;

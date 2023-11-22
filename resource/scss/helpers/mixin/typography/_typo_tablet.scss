@@ -1,7 +1,7 @@
 //--------------------------------------
-// Heading
+// @ Heading
 //--------------------------------------
-@mixin table-heading1($color: $color) {
+@mixin table-heading1($color: $dark) {
   color: $color;
   font-weight: 700;
   font-size: vw(40);
@@ -9,7 +9,7 @@
   letter-spacing: vw(-2.5);
 }
 
-@mixin table-heading2($color: $color) {
+@mixin table-heading2($color: $dark) {
   color: $color;
   font-weight: 700;
   font-size: vw(34);
@@ -18,9 +18,9 @@
 }
 
 //--------------------------------------
-// Body
+// @ Body
 //--------------------------------------
-@mixin table-body1($color: $color, $weight: $weight) {
+@mixin table-body1($color: $dark, $weight: $weightB) {
   color: $color;
   font-weight: $weight;
   font-size: vw(20);
@@ -29,16 +29,16 @@
 }
 
 //--------------------------------------
-// Label
+// @ Label
 //--------------------------------------
-@mixin table-label1($color: $color) {
+@mixin table-label1($color: $dark) {
   color: $color;
   font-weight: 700;
   font-size: vw(22);
   line-height: vw(34);
 }
 
-@mixin table-label2($color: $color) {
+@mixin table-label2($color: $dark) {
   color: $color;
   font-weight: 700;
   font-size: vw(18);

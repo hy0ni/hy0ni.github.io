@@ -1,7 +1,7 @@
 //--------------------------------------
-// Heading
+// @ Heading
 //--------------------------------------
-@mixin mc-heading1($color: $color) {
+@mixin mc-heading1($color: $dark) {
   color: $color;
   font-weight: 700;
   font-size: vw(28);
@@ -9,7 +9,7 @@
   letter-spacing: vw(-2.5);
 }
 
-@mixin mc-heading2($color: $color) {
+@mixin mc-heading2($color: $dark) {
   color: $color;
   font-weight: 700;
   font-size: vw(26);
@@ -18,9 +18,9 @@
 }
 
 //--------------------------------------
-// Body
+// @ Body
 //--------------------------------------
-@mixin mc-body1($color: $color, $weight: $weight) {
+@mixin mc-body1($color: $dark, $weight: $weightB) {
   color: $color;
   font-weight: $weight;
   font-size: vw(16);
@@ -28,7 +28,7 @@
   letter-spacing: vw(-2.5);
 }
 
-@mixin mc-body2($color: $color, $weight: $weight) {
+@mixin mc-body2($color: $dark, $weight: $weightB) {
   color: $color;
   font-weight: $weight;
   font-size: vw(14);
@@ -36,7 +36,7 @@
   letter-spacing: vw(-2.5);
 }
 
-@mixin mc-body3($color: $color, $weight: $weight) {
+@mixin mc-body3($color: $dark, $weight: $weightB) {
   color: $color;
   font-weight: $weight;
   font-size: vw(12);
@@ -45,16 +45,16 @@
 }
 
 //--------------------------------------
-// Label
+// @ Label
 //--------------------------------------
-@mixin mc-label1($color: $color, $weight: $weight) {
+@mixin mc-label1($color: $dark, $weight: $weightB) {
   color: $color;
   font-weight: $weight;
   font-size: vw(18);
   line-height: vw(26);
 }
 
-@mixin mc-label2($color: $color, $weight: $weight) {
+@mixin mc-label2($color: $dark, $weight: $weightB) {
   color: $color;
   font-weight: $weight;
   font-size: vw(16);
@@ -62,9 +62,9 @@
 }
 
 //--------------------------------------
-// Footer
+// @ Footer
 //--------------------------------------
-@mixin mc-footer($color: $color, $weight: $weight) {
+@mixin mc-footer($color: $dark, $weight: $weightB) {
   color: $color;
   font-weight: $weight;
   font-size: vw(10);
