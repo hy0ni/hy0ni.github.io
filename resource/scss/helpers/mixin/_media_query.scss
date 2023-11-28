@@ -1,5 +1,6 @@
 // @media Breakpoints
 $breakpoint-mobile-fold: 360px;
+$breakpoint-mobile: 416px;
 $breakpoint-mobile-landscape: 540px;
 $breakpoint-tablet: 769px;
 $breakpoint-tablet-land: 1025px;
@@ -18,6 +19,11 @@ $breakpoint-desktop: 1921px;
 }
 
 // mobile 최초 지정 사이즈
+@mixin mobile {
+  @media (max-width: #{$breakpoint-mobile - 1px}) {
+    @content;
+  }
+}
 
 // 540 이상 적용
 @mixin tablet-port {

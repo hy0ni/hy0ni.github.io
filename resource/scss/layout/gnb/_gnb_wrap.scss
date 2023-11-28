@@ -1,0 +1,13 @@
+.gnb-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: $gnb-mobile-height;
+  background: $black;
+  z-index: $z-gnb;
+
+  @include tablet {
+    height: $gnb-height;
+  }
+}

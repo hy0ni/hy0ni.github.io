@@ -1,0 +1,14 @@
+.gnb-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(56 * 100 / var(--vw) * 1vw);
+  background: #000;
+  z-index: 500;
+}
+@media (min-width: 769px) {
+  .gnb-wrap {
+    height: calc(80 * 100 / var(--vw) * 1vw);
+  }
+}/*# sourceMappingURL=gnb.min.css.map */
