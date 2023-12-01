@@ -22,6 +22,7 @@ window.addEventListener('DOMContentLoaded', () => {
   })
 
   resizeCheck();
+  gnb();
 })
 
 
@@ -47,13 +48,36 @@ function resizeCheck() {
 
   // 모바일 리사이즈
   if (mobileCheck() || $(window).width() < 1024) {
-    let vh = window.innerHeight * 0.01;
+    var vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty('--vh', vh + 'px');
     $(window).resize(function () {
-      let vh = window.innerHeight * 0.01;
+      var vh = window.innerHeight * 0.01;
       document.documentElement.style.setProperty('--vh', vh + 'px');
     });
   }
 
-}
 
+}
+/**---------------------------------------------------------- 
+* 모바일 기기 전용 
+---------------------------------------------------------- */
+let UserAgent = navigator.userAgent;
+function mobileCheck() {
+  if (UserAgent.match(/iPhone|iPod|Android|Windows CE|BlackBerry|Symbian|Windows Phone|webOS|Opera Mini|Opera Mobi|POLARIS|IEMobile|lgtelecom|nokia|SonyEricsson/i) != null || UserAgent.match(/LG|SAMSUNG|Samsung/) != null
+    || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)) {
+    return true;
+  } else {
+    return false;
+  }
+}
+function gnb() {
+  $gnb_load.load('../include/gnb.html', function () {
+    const $gnbWrap = $('.gnb-wrap');
+    const $btnMenu = $('.btn-menu');
+
+    $btnMenu.on('click', function () {
+      return (!$gnbWrap.hasClass(active)) ? $gnbWrap.addClass(active) : $gnbWrap.removeClass(active);
+    })
+
+  })
+}

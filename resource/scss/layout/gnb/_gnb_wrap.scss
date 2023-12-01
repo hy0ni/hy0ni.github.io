@@ -4,10 +4,109 @@
   left: 0;
   width: 100%;
   height: $gnb-mobile-height;
+  padding: 0 $padding-mobile;
   background: $black;
   z-index: $z-gnb;
 
   @include tablet {
     height: $gnb-height;
+    padding: 0 $padding-tablet;
+  }
+
+  header {
+    @include flex;
+    height: 100%;
+
+    .title {
+      margin-right: auto;
+      @include mc-label1($secondary);
+    }
+
+    .btn-menu {
+      position: relative;
+      width: vw(32);
+      height: vw(32);
+      z-index: 200;
+
+      &:focus {
+        border: none;
+      }
+
+      span {
+        position: absolute;
+        left: vw(6);
+        width: vw(20);
+        height: vw(1.5);
+        background: $secondary;
+        transition: all 0.2s;
+
+        &:first-of-type {
+          top: vw(8.75);
+        }
+        &:nth-of-type(2) {
+          top: vw(15.25);
+          opacity: 1;
+          transition: all 0.3s;
+        }
+        &:last-of-type {
+          top: vw(21.75);
+        }
+      }
+    }
+  }
+
+  &.is-active {
+    .btn-menu span {
+      transform-origin: 0 50%;
+      &:first-of-type {
+        top: vw(9.5);
+        left: vw(8);
+        transform: rotate(45deg);
+      }
+      &:nth-of-type(2) {
+        left: 0;
+        opacity: 0;
+      }
+      &:last-of-type {
+        top: vw(23.25);
+        left: vw(8);
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  .sidemenu {
+    position: fixed;
+    top: $gnb-mobile-height;
+    right: 0;
+    width: vw(300);
+    height: 100vh;
+    background: $black;
+    li {
+      a {
+        display: flex;
+        @include mc-label1($secondary, $weightR);
+      }
+      & a::before {
+        width: vw(26);
+        height: vw(26);
+        margin-right: vw(4);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        content: "";
+      }
+
+      //LNB 아이콘
+      $gnb-name: home, github;
+
+      @each $obj in $gnb-name {
+        $i: index($gnb-name, $obj);
+
+        &:nth-child(#{$i}) a::before {
+          background-image: url("../img/icon/ic_#{$obj}.png");
+        }
+      }
+    }
   }
 }
