@@ -74,39 +74,4 @@
       }
     }
   }
-
-  .sidemenu {
-    position: fixed;
-    top: $gnb-mobile-height;
-    right: 0;
-    width: vw(300);
-    height: 100vh;
-    background: $black;
-    li {
-      a {
-        display: flex;
-        @include mc-label1($secondary, $weightR);
-      }
-      & a::before {
-        width: vw(26);
-        height: vw(26);
-        margin-right: vw(4);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: contain;
-        content: "";
-      }
-
-      //LNB 아이콘
-      $gnb-name: home, github;
-
-      @each $obj in $gnb-name {
-        $i: index($gnb-name, $obj);
-
-        &:nth-child(#{$i}) a::before {
-          background-image: url("../img/icon/ic_#{$obj}.png");
-        }
-      }
-    }
-  }
 }
