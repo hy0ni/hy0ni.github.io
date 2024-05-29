@@ -1,0 +1,7 @@
+@function vh($target: 0, $vh: 0) {
+  @if $vh==0 {
+    @return calc((#{$target} * 100 / var(--vh)) * 1vh);
+  } @else {
+    @return calc((#{$target} * 100 / #{$vh}) * 1vh);
+  }
+}

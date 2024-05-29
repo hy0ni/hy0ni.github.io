@@ -1,0 +1,23 @@
+:root {
+  --vw: 280;
+}
+
+@include mobile {
+  :root {
+    --vw: 360;
+  }
+}
+
+// 769
+@include tablet {
+  :root {
+    --vw: 1024;
+  }
+}
+
+// 1080
+@include tablet-land {
+  :root {
+    --vw: 1280;
+  }
+}

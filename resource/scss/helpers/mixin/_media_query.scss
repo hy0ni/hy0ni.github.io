@@ -1,0 +1,78 @@
+// @media Breakpoints
+$breakpoint-mobile-fold: 360px;
+$breakpoint-mobile: 416px;
+$breakpoint-mobile-landscape: 540px;
+$breakpoint-tablet: 769px;
+$breakpoint-tablet-land: 1025px;
+$breakpoint-notebook: 1281px;
+$breakpoint-desktop: 1921px;
+
+// --------------------------------------------------
+// mobile 우선
+// --------------------------------------------------
+
+// 320px 이하
+@mixin mobile-fold {
+  @media (max-width: #{$breakpoint-mobile-fold - 1px}) {
+    @content;
+  }
+}
+
+// mobile 최초 지정 사이즈
+@mixin mobile {
+  @media (max-width: #{$breakpoint-mobile - 1px}) {
+    @content;
+  }
+}
+
+// 540 이상 적용
+@mixin tablet-port {
+  @media (min-width: #{$breakpoint-mobile-landscape}) {
+    @content;
+  }
+}
+
+// 769px 이상 적용
+@mixin tablet {
+  @media (min-width: #{$breakpoint-tablet}) {
+    @content;
+  }
+}
+
+// 1025px 이상 적용
+@mixin tablet-land {
+  @media (min-width: #{$breakpoint-tablet-land}) {
+    @content;
+  }
+}
+
+// 1280px 이상 적용
+// desktop 기준 vw 변환
+@mixin notebook {
+  @media (min-width: #{$breakpoint-notebook}) {
+    @content;
+  }
+}
+
+// 1920px 이상
+@mixin desktop {
+  @media (min-width: #{$breakpoint-desktop}) {
+    @content;
+  }
+}
+
+// 가로모드
+@mixin landscape {
+  @media (orientation: landscape) {
+    @content;
+  }
+}
+
+// 세로모드
+@mixin portrait {
+  @media (orientation: portrait) {
+    body {
+      @content;
+    }
+  }
+}
